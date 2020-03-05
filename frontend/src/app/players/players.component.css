@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.pagination p {
+    margin-bottom: 0;
+}
+
+table { 
+    margin-bottom: 0;
+}
+
+.pagination_right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+}
+.pagination_right p {
+    margin-left: 40px;
+}

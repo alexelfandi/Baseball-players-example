@@ -11,8 +11,8 @@ export class PlayerService {
   constructor(private http: HttpClient) {}
 
 
-  public getPaginated(page: number, size: number): Observable<Player[]>{
-    return this.http.get<Player[]>(`http://localhost:8080/page?page=${page},?size=${size}`);
+  public getPaginated(page: number = 0, size: number = 10): Observable<Player[]>{
+    return this.http.get<Player[]>(`http://localhost:8080/page?page=${page}&size=${size}`);
   }
 
   

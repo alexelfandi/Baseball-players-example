@@ -15,11 +15,8 @@ public class PageableController {
     @Autowired
     private PageableRepository repository;
     @GetMapping()
-    private Page<Player> getAllPlayers(@RequestParam(name = "page", defaultValue = "0") Integer page,
+    private Mono<Page<Player>> getAllPlayers(@RequestParam(name = "page", defaultValue = "0") Integer page,
                                              @RequestParam(name = "size", defaultValue = "10") Integer size){
-        System.out.println("Hola");
-        return this.repository.findAll(PageRequest.of(page,size));
-        //.map( fvfv -> ResponseEntity.ok());
-        // .defaultIfEmpty(ResponseEntity.notFound().build());
+        return Mono.just(this.repository.findAll(PageRequest.of(page,size)));
     }
 }

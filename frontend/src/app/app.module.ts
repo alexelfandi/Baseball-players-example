@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlayerService } from './service/player.service';
 import { TeamsComponent } from './teams/teams.component';
 import { PlayersComponent } from './players/players.component';
+import { MatFabMenuModule } from '@angular-material-extensions/fab-menu';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PlayersComponent } from './players/players.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFabMenuModule
   ],
   providers: [PlayerService],
   bootstrap: [AppComponent]

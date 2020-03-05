@@ -1,1 +1,37 @@
-<p>players works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Team</th>
+        <th scope="col">Position</th>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let player of paginatedObject.content; ">
+        <td>{{player.Name}}</td>
+        <td>{{player.Team}}</td>
+        <td>{{player.Position}}</td>
+        <td>{{player.Height}}</td>
+        <td>{{player.Weight}}</td>
+        <td>{{player.Age}}</td>
+      </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <div class="pagination_numbers">
+        <a [routerLink]="['/players']" (click)="firstPage()">&laquo;&laquo;</a>
+        <a [routerLink]="['/players']" (click)="previousPage()">&laquo;</a>
+        <a [routerLink]="['/players']">{{paginatedObject.pageNumber}} / {{paginatedObject.totalPages}}</a>
+        <a [routerLink]="['/players']" (click)="nextPage()">&raquo;</a>
+        <a [routerLink]="['/players']" (click)="lastPage()">&raquo;&raquo;</a>
+    </div>
+    <div class="pagination_right">
+        <p>total elements: {{paginatedObject.totalElements}}</p>
+        <p>page size: {{paginatedObject.pageSize}}</p>
+    </div>
+    
+</div>
