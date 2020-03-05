@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Mines */
+
+.text-pink {color: #e91e63;}
+.white {color: white;}
+.gray { color: lightgray }
+
+.title { font-size: 4vw; }
+.text-small {font-size: 1vw;}
+.text-medium { font-size: 2vw; }
+.text-large {font-size: 7vw;}
+.fullWidth {width: 100%;}
