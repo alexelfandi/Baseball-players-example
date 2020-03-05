@@ -25,7 +25,7 @@ public class Player {
     @Field("Weight")
     public Double Weight;
     @Field("Age")
-    public Integer Age;
+    public Double Age;
 
 
 }
