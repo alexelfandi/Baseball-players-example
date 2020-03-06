@@ -1,9 +1,9 @@
 package com.baseball.Baseball.Players;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
@@ -28,5 +28,14 @@ public class Controller {
         return this.repository.save(newPlayer);
     }
 
+    /*@PutMapping()
+    Mono<Player> updatePlayer*/
 
+    @DeleteMapping("{id}")
+    Mono<ResponseEntity<Player>> deletePlayer(@PathVariable(value = "id") String id){
+        return this.repository.findById(id)
+                .flatMap(player -> this.repository.delete(player)
+                        .then(Mono.just(new ResponseEntity<Player>(player , HttpStatus.OK))))
+                            .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
 }
