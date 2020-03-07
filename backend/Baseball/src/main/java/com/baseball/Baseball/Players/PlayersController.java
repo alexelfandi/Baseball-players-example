@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/player")
-public class Controller {
+public class PlayersController {
 
     @Autowired
     private PlayerRepository repository;

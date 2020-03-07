@@ -14,11 +14,11 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection="Teams")
 public class Team {
     @Id
-    public String Id;
+    public String id;
     @Field("Name")
     public String Name;
-    @Field("Shortname")
-    public String Shortname;
+    @Field("ShortName")
+    public String ShortName;
     @Field("Path")
     public String Path;
 }

@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/team")
-public class Controller {
+public class TeamsController {
     @Autowired
     private TeamRepository repository;
 
